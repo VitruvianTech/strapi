@@ -2,6 +2,7 @@
 # Don't send the following files to the docker daemon as the build context.
 
 .git
+.gitignore
 .gitattributes
 .travis.yml
 README.md

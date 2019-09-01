@@ -15,11 +15,15 @@ services:
       - DATABASE_SSL=false
       - DATABASE_AUTHENTICATION_DATABASE=strapi
       - HOST=localhost
+      - VIRTUAL_HOST=${DOMAIN:-}
+      - LETSENCRYPT_HOST=${DOMAIN:-}
+      - LETSENCRYPT_EMAIL=${EMAIL:-}
+      - LETSENCRYPT_TEST=${DEBUG:-false}
     ports:
       - 1337:1337
     volumes:
-      - ./strapi-app:/usr/src/api/strapi-app
-      #- /usr/src/api/strapi-app/node_modules
+      - ./app:/usr/src/api/strapi-app
+      - ./schema:/usr/src/api/schema
     depends_on:
       - db
     restart: always
@@ -31,5 +35,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./db:/data/db
+      - /data/db
+      - ./import:/data/import
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     restart: always

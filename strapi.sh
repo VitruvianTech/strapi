@@ -28,6 +28,7 @@ then
 fi
 
 cd $APP_NAME
+[ "$(ls -A /usr/src/api/schema)" ] && cp -rf /usr/src/api/schema/* api
 strapi start &
 
 strapiPID=$!
