@@ -30,8 +30,8 @@
     },
     "posts": {
       "collection": "post",
-      "via": "content",
-      "dominant": true
+      "dominant": true,
+      "via": "content"
     },
     "caption": {
       "type": "string"

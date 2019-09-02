@@ -16,8 +16,8 @@
     },
     "posts": {
       "collection": "post",
-      "via": "tags",
-      "dominant": true
+      "dominant": true,
+      "via": "tags"
     }
   }
 }

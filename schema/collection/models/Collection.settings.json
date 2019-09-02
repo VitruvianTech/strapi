@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "collection",
+  "info": {
+    "name": "collection",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "posts": {
+      "collection": "post",
+      "dominant": true,
+      "via": "collections"
+    },
+    "assets": {
+      "collection": "asset",
+      "via": "collections",
+      "dominant": true
+    },
+    "name": {
+      "required": true,
+      "unique": true,
+      "type": "string"
+    },
+    "slug": {
+      "required": true,
+      "unique": true,
+      "type": "string"
+    },
+    "summary": {
+      "required": true,
+      "type": "text"
+    },
+    "dek": {
+      "type": "string"
+    }
+  }
+}

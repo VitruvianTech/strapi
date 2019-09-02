@@ -54,6 +54,10 @@
       "collection": "asset",
       "via": "posts",
       "dominant": true
+    },
+    "collections": {
+      "collection": "collection",
+      "via": "posts"
     }
   }
 }

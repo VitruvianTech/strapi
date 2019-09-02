@@ -29,6 +29,10 @@
     "posts": {
       "collection": "post",
       "via": "assets"
+    },
+    "collections": {
+      "collection": "collection",
+      "via": "assets"
     }
   }
 }
