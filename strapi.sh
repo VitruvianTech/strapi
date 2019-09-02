@@ -28,6 +28,7 @@ then
 fi
 
 cd $APP_NAME
+npm install strapi-provider-upload-aws-s3@alpha --save
 [ "$(ls -A /usr/src/api/schema)" ] && cp -rf /usr/src/api/schema/* api
 strapi start &
 
