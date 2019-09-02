@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "asset",
+  "info": {
+    "name": "asset",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "file": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "type": {
+      "required": true,
+      "enum": [
+        "image",
+        "video"
+      ],
+      "default": "image",
+      "type": "enumeration"
+    },
+    "url": {
+      "type": "string"
+    },
+    "posts": {
+      "collection": "post",
+      "via": "assets"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "block",
+  "info": {
+    "name": "block",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "type": {
+      "required": true,
+      "enum": [
+        "paragraph",
+        "quote",
+        "heading",
+        "newsletter",
+        "image",
+        "video"
+      ],
+      "type": "enumeration",
+      "default": "paragraph"
+    },
+    "copy": {
+      "type": "text"
+    },
+    "credit": {
+      "type": "string"
+    },
+    "posts": {
+      "collection": "post",
+      "via": "content",
+      "dominant": true
+    },
+    "caption": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "files": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

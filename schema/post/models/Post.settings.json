@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "post",
   "info": {
     "name": "post",
     "description": ""
@@ -12,6 +12,48 @@
     "title": {
       "required": true,
       "type": "string"
+    },
+    "author": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "content": {
+      "collection": "block",
+      "via": "posts"
+    },
+    "summary": {
+      "required": true,
+      "type": "text"
+    },
+    "dek": {
+      "type": "string"
+    },
+    "location": {
+      "required": true,
+      "type": "string"
+    },
+    "slug": {
+      "required": true,
+      "type": "string",
+      "unique": true
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "posts"
+    },
+    "published": {
+      "required": true,
+      "type": "boolean",
+      "default": true
+    },
+    "updated": {
+      "required": true,
+      "type": "date"
+    },
+    "assets": {
+      "collection": "asset",
+      "via": "posts",
+      "dominant": true
     }
   }
 }
