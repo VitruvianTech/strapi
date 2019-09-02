@@ -14,11 +14,6 @@
       "dominant": true,
       "via": "collections"
     },
-    "assets": {
-      "collection": "asset",
-      "via": "collections",
-      "dominant": true
-    },
     "name": {
       "required": true,
       "unique": true,
@@ -35,6 +30,11 @@
     },
     "dek": {
       "type": "string"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

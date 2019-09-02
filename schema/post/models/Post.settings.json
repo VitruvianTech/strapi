@@ -37,10 +37,6 @@
       "type": "string",
       "unique": true
     },
-    "tags": {
-      "collection": "tag",
-      "via": "posts"
-    },
     "published": {
       "required": true,
       "type": "boolean",
@@ -50,14 +46,14 @@
       "required": true,
       "type": "date"
     },
-    "assets": {
-      "collection": "asset",
-      "via": "posts",
-      "dominant": true
-    },
     "collections": {
       "collection": "collection",
       "via": "posts"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

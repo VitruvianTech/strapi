@@ -30,8 +30,8 @@
     },
     "posts": {
       "collection": "post",
-      "dominant": true,
-      "via": "content"
+      "via": "content",
+      "dominant": true
     },
     "caption": {
       "type": "string"
@@ -39,7 +39,7 @@
     "url": {
       "type": "string"
     },
-    "files": {
+    "media": {
       "collection": "file",
       "via": "related",
       "plugin": "upload"
