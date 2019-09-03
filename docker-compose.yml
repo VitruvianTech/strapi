@@ -14,7 +14,7 @@ services:
       - DATABASE_PASSWORD=
       - DATABASE_SSL=false
       - DATABASE_AUTHENTICATION_DATABASE=strapi
-      - HOST=localhost
+      - HOST=0.0.0.0
       - VIRTUAL_HOST=${DOMAIN:-}
       - LETSENCRYPT_HOST=${DOMAIN:-}
       - LETSENCRYPT_EMAIL=${EMAIL:-}
