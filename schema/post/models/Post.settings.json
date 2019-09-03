@@ -54,6 +54,15 @@
       "collection": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "related": {
+      "collection": "post",
+      "via": "relatedBy",
+      "dominant": true
+    },
+    "relatedBy": {
+      "collection": "post",
+      "via": "related"
     }
   }
 }
