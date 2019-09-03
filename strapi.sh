@@ -21,16 +21,16 @@ EXTRA_ARGS=${EXTRA_ARGS:-}
 
 if [ ! -f "$APP_NAME/package.json" ]
 then
-    strapi new ${APP_NAME} --dbclient=$DATABASE_CLIENT --dbhost=$DATABASE_HOST --dbport=$DATABASE_PORT --dbsrv=$DATABASE_SRV --dbname=$DATABASE_NAME --dbusername=$DATABASE_USERNAME --dbpassword=$DATABASE_PASSWORD --dbssl=$DATABASE_SSL --dbauth=$DATABASE_AUTHENTICATION_DATABASE $EXTRA_ARGS
+    NODE_ENV=${NODE_ENV:-production} strapi new ${APP_NAME} --dbclient=$DATABASE_CLIENT --dbhost=$DATABASE_HOST --dbport=$DATABASE_PORT --dbsrv=$DATABASE_SRV --dbname=$DATABASE_NAME --dbusername=$DATABASE_USERNAME --dbpassword=$DATABASE_PASSWORD --dbssl=$DATABASE_SSL --dbauth=$DATABASE_AUTHENTICATION_DATABASE $EXTRA_ARGS
 elif [ ! -d "$APP_NAME/node_modules" ]
 then
     npm install --prefix ./$APP_NAME
 fi
 
 cd $APP_NAME
-npm install strapi-provider-upload-aws-s3@alpha --save
+npm install strapi-provider-upload-aws-s3@alpha
 [ "$(ls -A /usr/src/api/schema)" ] && cp -rf /usr/src/api/schema/* api
-strapi start &
+NODE_ENV=${NODE_ENV:-production} strapi start &
 
 strapiPID=$!
 wait "$strapiPID"

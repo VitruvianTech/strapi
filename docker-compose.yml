@@ -1,24 +1,24 @@
-version: '3'
+version: '3.5'
 
 services:
   api:
     build: .
     image: strapi/strapi
     environment:
-      - APP_NAME=strapi-app
-      - DATABASE_CLIENT=mongo
-      - DATABASE_HOST=db
-      - DATABASE_PORT=27017
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=
-      - DATABASE_PASSWORD=
-      - DATABASE_SSL=false
-      - DATABASE_AUTHENTICATION_DATABASE=strapi
-      - HOST=0.0.0.0
-      - VIRTUAL_HOST=${DOMAIN:-}
-      - LETSENCRYPT_HOST=${DOMAIN:-}
-      - LETSENCRYPT_EMAIL=${EMAIL:-}
-      - LETSENCRYPT_TEST=${DEBUG:-false}
+      APP_NAME: strapi-app
+      DATABASE_CLIENT: mongo
+      DATABASE_HOST: db
+      DATABASE_PORT: 27017
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME:
+      DATABASE_PASSWORD:
+      DATABASE_SSL: 'false'
+      DATABASE_AUTHENTICATION_DATABASE: strapi
+      VIRTUAL_HOST: ${DOMAIN:-}
+      LETSENCRYPT_HOST: ${DOMAIN:-}
+      LETSENCRYPT_EMAIL: ${EMAIL:-}
+      LETSENCRYPT_TEST: ${DEBUG:-false}
+      NODE_ENV: ${ENV:-development}
     ports:
       - 1337:1337
     volumes:
@@ -31,7 +31,7 @@ services:
   db:
     image: mongo
     environment:
-      - MONGO_INITDB_DATABASE=strapi
+      MONGO_INITDB_DATABASE: strapi
     ports:
       - 27017:27017
     volumes:
