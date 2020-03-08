@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "collections",
+  "info": {
+    "name": "Collection"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "posts": {
+      "via": "collections",
+      "collection": "post",
+      "dominant": true
+    },
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "summary": {
+      "type": "richtext",
+      "required": true
+    },
+    "dek": {
+      "type": "string"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

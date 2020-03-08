@@ -1,0 +1,41 @@
+{
+  "connection": "default",
+  "collectionName": "components_posts_content",
+  "info": {
+    "name": "Content",
+    "icon": "quote-left"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "paragraph",
+        "quote",
+        "heading",
+        "newsletter",
+        "image",
+        "video",
+        "component"
+      ]
+    },
+    "credit": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "value": {
+      "type": "richtext"
+    }
+  }
+}

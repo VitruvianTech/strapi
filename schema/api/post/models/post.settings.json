@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "posts",
+  "info": {
+    "name": "Post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "posts.content"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "related": {
+      "collection": "post",
+      "via": "relatedBy",
+      "dominant": true
+    },
+    "relatedBy": {
+      "collection": "post",
+      "via": "related"
+    },
+    "updated": {
+      "type": "datetime"
+    },
+    "published": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "richtext",
+      "required": true
+    },
+    "dek": {
+      "type": "string"
+    },
+    "collections": {
+      "collection": "collection",
+      "via": "posts"
+    },
+    "order": {
+      "type": "component",
+      "repeatable": true,
+      "component": "collections.order"
+    }
+  }
+}
