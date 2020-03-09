@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 
 services:
   strapi:
@@ -14,6 +14,10 @@ services:
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
       - DATABASE_AUTHENTICATION_DATABASE=strapi
+      - VIRTUAL_HOST=${DOMAIN:-}
+      - LETSENCRYPT_HOST=${DOMAIN:-}
+      - LETSENCRYPT_EMAIL=${EMAIL:-}
+      - LETSENCRYPT_TEST=${DEBUG:-false}
     ports:
       - 1337:1337
     volumes:
