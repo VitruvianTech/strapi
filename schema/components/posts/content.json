@@ -22,9 +22,6 @@
     "credit": {
       "type": "string"
     },
-    "caption": {
-      "type": "string"
-    },
     "url": {
       "type": "string"
     },
@@ -35,6 +32,9 @@
       "required": false
     },
     "value": {
+      "type": "string"
+    },
+    "copy": {
       "type": "richtext"
     }
   }

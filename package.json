@@ -1,0 +1,7 @@
+{
+  "name": "@vitruviantech/strapi",
+  "version": "3.0.0-beta.19.3",
+  "scripts": {
+    "update": "docker-compose exec strapi sh -c '[ \"$(ls -A /srv/schema)\" ] && cp -rf /srv/schema/* /srv/app'"
+  }
+}
