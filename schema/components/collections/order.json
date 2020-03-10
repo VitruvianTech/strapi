@@ -16,7 +16,7 @@
       "type": "integer",
       "default": 1,
       "required": true,
-      "unique": true,
+      "unique": false,
       "min": 1
     }
   }

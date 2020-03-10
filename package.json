@@ -1,7 +1,9 @@
 {
   "name": "@vitruviantech/strapi",
-  "version": "3.0.0-beta.19.3",
+  "version": "3.0.0-beta.19.3.1",
   "scripts": {
-    "update": "docker-compose exec strapi sh -c '[ \"$(ls -A /srv/schema)\" ] && cp -rf /srv/schema/* /srv/app'"
+    "import": "docker-compose exec strapi sh -c '[ \"$(ls -A /srv/schema)\" ] && cp -rf /srv/schema/* /srv/app'",
+    "export": "docker-compose exec strapi sh -c '[ \"$(ls -A /srv/schema)\" ] && cp -rf /srv/app/api/* /srv/schema/api && cp -rf /srv/app/components/* /srv/schema/components'",
+    "update": "npm run import"
   }
 }

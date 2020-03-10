@@ -17,7 +17,8 @@
         "image",
         "video",
         "component"
-      ]
+      ],
+      "required": true
     },
     "credit": {
       "type": "string"
