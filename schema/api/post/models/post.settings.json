@@ -29,15 +29,6 @@
       "plugin": "users-permissions",
       "model": "user"
     },
-    "related": {
-      "collection": "post",
-      "via": "relatedBy",
-      "dominant": true
-    },
-    "relatedBy": {
-      "collection": "post",
-      "via": "related"
-    },
     "updated": {
       "type": "datetime"
     },
@@ -61,14 +52,10 @@
     "dek": {
       "type": "string"
     },
-    "collections": {
-      "collection": "collection",
-      "via": "posts"
-    },
-    "order": {
+    "related": {
       "type": "component",
       "repeatable": true,
-      "component": "collections.order"
+      "component": "collections.post"
     }
   }
 }

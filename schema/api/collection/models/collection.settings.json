@@ -10,11 +10,6 @@
     "timestamps": true
   },
   "attributes": {
-    "posts": {
-      "via": "collections",
-      "collection": "post",
-      "dominant": true
-    },
     "name": {
       "type": "string",
       "unique": true,
@@ -37,6 +32,11 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "posts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "collections.post"
     }
   }
 }

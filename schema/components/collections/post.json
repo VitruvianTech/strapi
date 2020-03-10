@@ -1,0 +1,14 @@
+{
+  "connection": "default",
+  "collectionName": "components_collections_posts",
+  "info": {
+    "name": "Post",
+    "icon": "file-alt"
+  },
+  "options": {},
+  "attributes": {
+    "post": {
+      "model": "post"
+    }
+  }
+}
