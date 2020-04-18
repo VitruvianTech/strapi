@@ -3,9 +3,9 @@ version: '3.5'
 services:
   strapi:
     container_name: strapi
-    image: vitruviantech/strapi:${VERSION:-3.0.0-beta.19.3}
+    image: vitruviantech/strapi:${VERSION:-3.0.0-beta.20}
     environment:
-      - VERSION=${VERSION:-3.0.0-beta.19.3}
+      - VERSION=${VERSION:-3.0.0-beta.20}
       - NODE_ENV=${NODE_ENV:-production}
       - DATABASE_CLIENT=mongo
       - DATABASE_HOST=db
